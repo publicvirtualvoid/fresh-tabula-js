@@ -1,10 +1,56 @@
-# tabula-js
+# tabula-js-fresh
+> Convert tables inside PDFs to CSV. Node wrapper for [`tabular-java`](https://github.com/tabulapdf/tabula-java).
 
-__PLEASE NOTE__ I AM NOT ACTIVELY MAINTAINING THIS REPO - however, I am humbled by all the interest and PRs to date.
+This is a maintained fork of the [`tabula-js`](https://github.com/ezodude/tabula-js) package.
 
-Helps you extract CSV data tables from PDF files. It's a node wrapper for the mighty [tabula-java](https://github.com/tabulapdf/tabula-java) 1.0.2.
+## Contents
 
-## Options
+- [Contents](#contents)
+- [Getting Started](#getting-started)
+  - [Requirements](#requirements)
+  - [Installing](#installing)
+  - [Usage](#usage)
+  - [Options](#options)
+  - [Examples](#examples)
+    - [extractCsv no options](#extractcsv-no-options)
+    - [extractCsv with options](#extractcsv-with-options)
+    - [streamCsv](#streamcsv)
+    - [streamCsv uses highland streams](#streamcsv-uses-highland-streams)
+- [Acknowledgements](#acknowledgements)
+
+## Getting Started
+
+### Requirements
+
+- Java Development Kit (JDK) with `java` available on command-line
+- Node.js/npm
+
+### Installing
+
+To install as a dependency via `npm`:
+
+```
+$ npm install --save tabula-js-fresh
+```
+
+### Usage
+
+Simply import the module:
+
+```javascript
+const tabula = require('tabula-js-fresh');
+const table = tabula('data/foobar.pdf');
+table.extractCsv((err, data) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
+
+  console.log(data);
+});
+```
+
+### Options
 
 Not all [tabula-java options](https://github.com/tabulapdf/tabula-java#usage-examples) are exposed. Particularly wirting to file but any extracted data is available through a callback or a stream.
 
@@ -44,9 +90,9 @@ useLineReturns       Use embedded line returns in cells. (Only in spreadsheet
                      mode.)
 ```
 
-## Getting started
+### Examples
 
-### extractCsv no options
+#### extractCsv no options
 
 This is the simplest use case. It's uses a classic node style callback ```(err, data)```. The extracted CSV is an array of all rows found in the data table including any headers.
 
@@ -56,7 +102,7 @@ const t = tabula(source.pdf);
 t.extractCsv((err, data) => console.log(data));
 ```
 
-### extractCsv with options
+#### extractCsv with options
 
 Here we use the ```area``` option to zero in on the data.
 
@@ -66,7 +112,7 @@ const t = tabula(source.pdf, {area: "269.875,150,690,545"});
 t.extractCsv((err, data) => console.log(data));
 ```
 
-### streamCsv
+#### streamCsv
 
 Is similar to the callback version but with data extracted as a stream.
 
@@ -76,7 +122,7 @@ const stream = tabula(source.pdf).streamCsv();
 stream.pipe(process.stdout);
 ```
 
-### streamCsv uses highland streams
+#### streamCsv uses highland streams
 
 In reality the library is built on the notion of streams all the way down. [Highland.js](http://highlandjs.org/) is used to make this a breeze.
 
@@ -91,6 +137,7 @@ stream
 .done(() => console.log('ALL DONE!'));
 ```
 
-## Thank yous
+## Acknowledgements
 
-This library would not be possible without the amazing effort of the [tabula-java](https://github.com/tabulapdf/tabula-java) team. Thank you!
+* [Ezo Saleh](https://github.com/ezodude), [original author](https://github.com/ezodude/tabula-js)
+* [tabula-java](https://github.com/tabulapdf/tabula-java) team
