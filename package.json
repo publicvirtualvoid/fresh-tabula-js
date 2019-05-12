@@ -1,5 +1,5 @@
 {
-  "name": "tabula-js",
+  "name": "tabula-js-fresh",
   "version": "1.0.1",
   "description": "Extract CSV data tables from PDF files. It's a node wrapper for the mighty tabula-java 0.9.0.",
   "main": "index.js",
@@ -8,19 +8,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ezodude/tabula-js.git"
+    "url": "git+https://github.com/cdtinney/tabula-js-fresh.git"
   },
   "keywords": [
     "pdf",
     "csv",
     "pdf to csv"
   ],
-  "author": "Ezo Saleh <npm@ezosaleh.com> (http://ezosaleh.com/)",
+  "author": "Colin Tinney <colintinney@gmail.com> (https://tinney.dev/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ezodude/tabula-js/issues"
+    "url": "https://github.com/cdtinney/tabula-js-fresh/issues"
   },
-  "homepage": "https://github.com/ezodude/tabula-js#readme",
+  "homepage": "https://github.com/cdtinney/tabula-js-fresh#readme",
   "dependencies": {
     "highland": "^2.8.1",
     "highland-process": "^1.0.5",
