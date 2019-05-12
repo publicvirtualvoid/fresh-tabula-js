@@ -1,4 +1,4 @@
-# tabula-js-fresh
+# fresh-tabula-js
 > Convert tables inside PDFs to CSV. Node wrapper for [`tabular-java`](https://github.com/tabulapdf/tabula-java).
 
 This is a maintained fork of the [`tabula-js`](https://github.com/ezodude/tabula-js) package.
@@ -30,7 +30,7 @@ This is a maintained fork of the [`tabula-js`](https://github.com/ezodude/tabula
 To install as a dependency via `npm`:
 
 ```
-$ npm install --save tabula-js-fresh
+$ npm install --save fresh-tabula-js
 ```
 
 ### Usage
@@ -38,7 +38,7 @@ $ npm install --save tabula-js-fresh
 Simply import the module:
 
 ```javascript
-const tabula = require('tabula-js-fresh');
+const tabula = require('fresh-tabula-js');
 const table = tabula('data/foobar.pdf');
 table.extractCsv((err, data) => {
   if (err) {
