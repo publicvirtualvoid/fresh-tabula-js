@@ -1,7 +1,7 @@
 {
   "name": "fresh-tabula-js",
   "version": "1.0.1",
-  "description": "Extract CSV data tables from PDF files. It's a node wrapper for the mighty tabula-java 0.9.0.",
+  "description": "Extract CSV data from PDF tables using tabula-java.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
