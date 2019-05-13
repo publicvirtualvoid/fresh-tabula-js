@@ -1,3 +1,3 @@
-const Tabula = require('./lib/tabula');
+const Tabula = require('./src/tabula');
 
 module.exports = Tabula;
