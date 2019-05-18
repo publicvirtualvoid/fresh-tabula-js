@@ -11,7 +11,7 @@ const JAR_PATH = path.join(__dirname, '../../bin/jar/tabula-java.jar');
 const parseCommandArgs = (args = {}) => {
   return Object.entries(args).reduce((acc, curr) => {
     const [ key, value ] = curr;
-    const modifiedKey = `--${_.kebabCase(key)}`;
+    const modifiedKey = key.startsWith('-') ? key : `--${_.kebabCase(key)}`;
 
     if (Array.isArray(value)) {
       return acc.concat(
